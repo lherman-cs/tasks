@@ -2,6 +2,7 @@
 
 from argparse import ArgumentParser
 from os.path import realpath, join, exists, dirname
+import os
 import pickle
 from task import Task
 from sys import stderr
@@ -11,6 +12,7 @@ tasks_path = settings.TASKS_PATH
 log_path = settings.LOG_PATH
 margin = settings.MARGIN
 
+os.makedirs(dirname(log_path), exist_ok=True)
 stderr = open(log_path, 'a')
 
 def save(tasks):
