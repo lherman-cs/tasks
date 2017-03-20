@@ -1,3 +1,5 @@
 #!/bin/bash
 
-python3 main.py $* 2> log.txt
+home="$(pwd)"
+python3 $home/bin/tasks $* 2> $home/log/log.txt
+

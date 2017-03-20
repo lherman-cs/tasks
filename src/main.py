@@ -5,9 +5,10 @@ from os.path import realpath, join, exists, dirname
 import pickle
 from task import Task
 import sys
+import settings
 
-tasks_path = join(dirname(realpath(__file__)), 'tasks.pkl')
-margin = 80
+tasks_path = settings.TASKS_PATH
+margin = settings.MARGIN
 
 def save(tasks):
     with open(tasks_path, 'wb') as file:
