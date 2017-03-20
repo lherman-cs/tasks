@@ -69,7 +69,7 @@ def main():
                           type=str)
     gparser.add_argument('-d', '--done', help="Remove the first task", \
                           action='store_true')
-    gparser.add_argument('-f', '--finish', help="Remove the task_n", \
+    gparser.add_argument('-f', '--finish', help="Remove task_n", \
                           type=int, dest='task_n')
 
 
