@@ -5,7 +5,7 @@ SRC_PATH="${INSTL_PATH}/src"
 LOG_PATH="${INSTL_PATH}/log"
 
 # Generate settings.py
-echo "TASKS_PATH = '${LOG_PATH}/tasks.pkl'" >> ${SRC_PATH}/settings.py 
+echo "TASKS_PATH = '${LOG_PATH}/tasks.pkl'" > ${SRC_PATH}/settings.py 
 echo "LOG_PATH = '${LOG_PATH}/log.txt'" >> ${SRC_PATH}/settings.py 
 echo "MARGIN = 80" >> ${SRC_PATH}/settings.py 
 
