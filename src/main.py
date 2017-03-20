@@ -4,28 +4,31 @@ from argparse import ArgumentParser
 from os.path import realpath, join, exists, dirname
 import pickle
 from task import Task
-import sys
+from sys import stderr
 import settings
 
 tasks_path = settings.TASKS_PATH
+log_path = settings.LOG_PATH
 margin = settings.MARGIN
+
+stderr = open(log_path, 'a')
 
 def save(tasks):
     with open(tasks_path, 'wb') as file:
-        print("Saving to {}".format(tasks_path), file=sys.stderr)
+        print("Saving to {}".format(tasks_path), file=stderr, flush=True)
         pickle.dump(tasks, file)
-        print("Saved!", file=sys.stderr)
+        print("Saved!", file=stderr, flush=True)
 
 def load():
     # Check if the file exists. If it doesn't, it'll create an empty queue
     if exists(tasks_path):
         with open(tasks_path, 'rb') as file:
-            print("Loading from {}".format(tasks_path), file=sys.stderr)
+            print("Loading from {}".format(tasks_path), file=stderr, flush=True)
             tasks = pickle.load(file)
-            print("Loaded!", file=sys.stderr)
+            print("Loaded!", file=stderr, flush=True)
 
     else:
-        print("Can't find any existing tasks", file=sys.stderr)
+        print("Can't find any existing tasks", file=stderr, flush=True)
         tasks = []
 
     return tasks
